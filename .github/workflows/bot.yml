@@ -32,6 +32,7 @@ jobs:
           author: rustbot[bot] <noreply@github.com>
           commit-message: "task: Daily learning"
           branch: rustbot/learning-${{ github.run_number }}
+          title: "[rustbot] Learning Session #${{ github.run_number }}"
           body: |
             ## Today's Learning
             
