@@ -30,9 +30,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           committer: rustbot[bot] <noreply@github.com>
           author: rustbot[bot] <noreply@github.com>
-          commit-message: "task: $(date +%Y-%m-%d)"
-          branch: rustbot/$(date +%Y-%m-%d)
-          title: "[rustbot] $(date +%Y-%m-%d)"
+          commit-message: "task: Daily learning"
+          branch: rustbot/learning-${{ github.run_number }}
           body: |
             ## Today's Learning
             
