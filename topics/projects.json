@@ -1,0 +1,17 @@
+{
+  "projects/rest_api": {
+    "name": "REST API Server",
+    "subtopic": "Complete web service",
+    "focus_areas": ["axum/actix", "routing", "middleware", "database"]
+  },
+  "projects/websocket_server": {
+    "name": "WebSocket Server",
+    "subtopic": "Real-time bidirectional communication",
+    "focus_areas": ["websockets", "connection management", "broadcasting"]
+  },
+  "projects/web_scraper": {
+    "name": "Web Scraper",
+    "subtopic": "Concurrent scraping with limits",
+    "focus_areas": ["concurrent requests", "rate limiting", "retry logic"]
+  }
+}

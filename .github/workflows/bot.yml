@@ -1,0 +1,45 @@
+name: rust-bot
+
+on:
+  schedule:
+    - cron: '30 3 * * *'  # 9 AM IST daily
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install anthropic
+      
+      - name: Generate content
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_content.py
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          committer: rustbot[bot] <noreply@github.com>
+          author: rustbot[bot] <noreply@github.com>
+          commit-message: "task: $(date +%Y-%m-%d)"
+          branch: rustbot/$(date +%Y-%m-%d)
+          title: "[rustbot] $(date +%Y-%m-%d)"
+          body: |
+            ## Today's Learning
+            
+            ### Tasks:
+            - [ ] Complete MCQ questions
+            - [ ] Read learning material  
+            - [ ] Solve coding problem
+            
+            Merge when done.
+          labels: rust-bot

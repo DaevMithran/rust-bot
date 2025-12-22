@@ -1,0 +1,27 @@
+{
+  "async/foundations": {
+    "name": "Async Foundations",
+    "subtopic": "Future trait and async/await",
+    "focus_areas": ["Future trait", "async/await", "Poll", "Pin"]
+  },
+  "async/manual_future": {
+    "name": "Manual Future",
+    "subtopic": "Implementing Future from scratch",
+    "focus_areas": ["Future trait", "poll method", "context", "waker"]
+  },
+  "async/io_tcp_server": {
+    "name": "Async TCP Server",
+    "subtopic": "Echo server with multiple connections",
+    "focus_areas": ["TcpListener", "TcpStream", "tokio::spawn"]
+  },
+  "async/producer_consumer": {
+    "name": "Producer-Consumer",
+    "subtopic": "Using async channels",
+    "focus_areas": ["mpsc", "multiple producers", "backpressure"]
+  },
+  "streams/custom_stream": {
+    "name": "Custom Stream",
+    "subtopic": "Implementing Stream trait",
+    "focus_areas": ["Stream trait", "async iteration", "poll_next"]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "ownership_and_borrowing": {
+    "name": "Ownership & Borrowing",
+    "subtopic": "Core ownership rules and borrowing",
+    "focus_areas": ["ownership rules", "move semantics", "borrowing", "lifetimes"]
+  },
+  "traits/basics": {
+    "name": "Traits & Generics",
+    "subtopic": "Trait system and generic programming",
+    "focus_areas": ["trait definitions", "generics", "trait bounds", "associated types"]
+  },
+  "traits/advanced": {
+    "name": "Advanced Traits",
+    "subtopic": "Trait objects and conversions",
+    "focus_areas": ["dyn Trait", "From/Into", "operator overloading", "object safety"]
+  },
+  "iterators": {
+    "name": "Iterators",
+    "subtopic": "Iterator trait and patterns",
+    "focus_areas": ["Iterator trait", "adapters", "consumers", "custom iterators"]
+  },
+  "error_handling": {
+    "name": "Error Handling",
+    "subtopic": "Result, Option, and error types",
+    "focus_areas": ["Result", "Option", "custom errors", "error propagation"]
+  },
+  "smart_pointers": {
+    "name": "Smart Pointers",
+    "subtopic": "Box, Rc, Arc, and reference counting",
+    "focus_areas": ["Box", "Rc", "Arc", "Weak", "cycle prevention"]
+  },
+  "interior_mutability": {
+    "name": "Interior Mutability",
+    "subtopic": "Cell, RefCell, and Mutex patterns",
+    "focus_areas": ["Cell", "RefCell", "Mutex", "when to use each"]
+  },
+  "closures": {
+    "name": "Closures",
+    "subtopic": "Closure traits and capture modes",
+    "focus_areas": ["Fn/FnMut/FnOnce", "move keyword", "returning closures"]
+  },
+  "macros": {
+    "name": "Macros",
+    "subtopic": "Declarative and procedural macros",
+    "focus_areas": ["macro_rules!", "derive macros", "DSL creation"]
+  }
+}

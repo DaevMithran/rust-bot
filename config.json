@@ -1,0 +1,12 @@
+{
+  "language": "rust",
+  "difficulty": "intermediate",
+  
+  "active_topic_file": "topics/revision.json",
+  "active_topic": "ownership_and_borrowing",
+  
+  "settings": {
+    "mcq_count": 3,
+    "problem_scaffold": "partial"
+  }
+}

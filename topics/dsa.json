@@ -1,0 +1,182 @@
+{
+  "arrays/basics": {
+    "name": "Array Fundamentals",
+    "subtopic": "Two pointers and sliding window",
+    "focus_areas": ["slices", "mutable references", "in-place operations", "borrowing"]
+  },
+  "arrays/sorting": {
+    "name": "Sorting Algorithms",
+    "subtopic": "Custom sorting and comparators",
+    "focus_areas": ["sort_by", "Ord trait", "partial_cmp", "unstable_sort"]
+  },
+  "strings/manipulation": {
+    "name": "String Manipulation",
+    "subtopic": "String vs &str operations",
+    "focus_areas": ["String", "&str", "chars()", "bytes()", "UTF-8"]
+  },
+  "strings/pattern_matching": {
+    "name": "String Pattern Matching",
+    "subtopic": "KMP and string searching",
+    "focus_areas": ["pattern matching", "iterators", "string slicing"]
+  },
+  "linked_list/singly": {
+    "name": "Singly Linked List",
+    "subtopic": "Basic operations with Box",
+    "focus_areas": ["Box<T>", "Option<T>", "take()", "pattern matching"]
+  },
+  "linked_list/doubly": {
+    "name": "Doubly Linked List",
+    "subtopic": "Bidirectional traversal",
+    "focus_areas": ["Rc<RefCell<T>>", "Weak", "interior mutability"]
+  },
+  "stack/basic": {
+    "name": "Stack Implementation",
+    "subtopic": "Stack using Vec",
+    "focus_areas": ["Vec operations", "push", "pop", "LIFO"]
+  },
+  "stack/monotonic": {
+    "name": "Monotonic Stack",
+    "subtopic": "Next greater element problems",
+    "focus_areas": ["monotonic property", "Vec as stack", "indices"]
+  },
+  "queue/basic": {
+    "name": "Queue Implementation",
+    "subtopic": "Queue using VecDeque",
+    "focus_areas": ["VecDeque", "push_back", "pop_front", "FIFO"]
+  },
+  "queue/priority": {
+    "name": "Priority Queue",
+    "subtopic": "Heap operations with BinaryHeap",
+    "focus_areas": ["BinaryHeap", "Ord", "custom comparators", "heap property"]
+  },
+  "hash_table/basics": {
+    "name": "Hash Tables",
+    "subtopic": "HashMap and HashSet usage",
+    "focus_areas": ["HashMap", "HashSet", "entry API", "borrowing"]
+  },
+  "hash_table/custom": {
+    "name": "Custom Hash Implementation",
+    "subtopic": "Implementing Hash trait",
+    "focus_areas": ["Hash trait", "Hasher", "derive Hash", "Eq"]
+  },
+  "binary_tree/traversal": {
+    "name": "Binary Tree Traversal",
+    "subtopic": "Inorder, preorder, postorder",
+    "focus_areas": ["Rc<RefCell<T>>", "recursion", "iterative traversal"]
+  },
+  "binary_tree/bst": {
+    "name": "Binary Search Tree",
+    "subtopic": "BST operations",
+    "focus_areas": ["insertion", "deletion", "search", "Option<Box<T>>"]
+  },
+  "binary_tree/balanced": {
+    "name": "Balanced Trees",
+    "subtopic": "AVL or Red-Black tree concepts",
+    "focus_areas": ["tree rotation", "balance factor", "smart pointers"]
+  },
+  "heap/binary": {
+    "name": "Binary Heap",
+    "subtopic": "Min/Max heap implementation",
+    "focus_areas": ["BinaryHeap", "parent-child relations", "heapify"]
+  },
+  "graph/representation": {
+    "name": "Graph Representation",
+    "subtopic": "Adjacency list and matrix",
+    "focus_areas": ["Vec<Vec<T>>", "HashMap", "graph modeling"]
+  },
+  "graph/bfs": {
+    "name": "Breadth-First Search",
+    "subtopic": "BFS traversal and shortest path",
+    "focus_areas": ["VecDeque", "visited set", "level-order"]
+  },
+  "graph/dfs": {
+    "name": "Depth-First Search",
+    "subtopic": "DFS traversal and cycle detection",
+    "focus_areas": ["recursion", "visited tracking", "backtracking"]
+  },
+  "graph/dijkstra": {
+    "name": "Dijkstra's Algorithm",
+    "subtopic": "Shortest path in weighted graphs",
+    "focus_areas": ["BinaryHeap", "priority queue", "Reverse wrapper"]
+  },
+  "graph/union_find": {
+    "name": "Union-Find",
+    "subtopic": "Disjoint set operations",
+    "focus_areas": ["path compression", "union by rank", "Vec indexing"]
+  },
+  "trie/basic": {
+    "name": "Trie Implementation",
+    "subtopic": "Prefix tree operations",
+    "focus_areas": ["HashMap", "nested structures", "insert/search"]
+  },
+  "dp/1d": {
+    "name": "1D Dynamic Programming",
+    "subtopic": "Fibonacci, climbing stairs",
+    "focus_areas": ["memoization", "Vec", "bottom-up", "space optimization"]
+  },
+  "dp/2d": {
+    "name": "2D Dynamic Programming",
+    "subtopic": "Grid problems and LCS",
+    "focus_areas": ["Vec<Vec<T>>", "state transitions", "tabulation"]
+  },
+  "dp/knapsack": {
+    "name": "Knapsack Problems",
+    "subtopic": "0/1 and unbounded knapsack",
+    "focus_areas": ["2D DP", "space optimization", "backtracking"]
+  },
+  "backtracking/permutations": {
+    "name": "Permutations",
+    "subtopic": "Generating all permutations",
+    "focus_areas": ["recursion", "swap", "backtracking pattern"]
+  },
+  "backtracking/combinations": {
+    "name": "Combinations",
+    "subtopic": "Subset generation",
+    "focus_areas": ["recursion", "Vec cloning", "pruning"]
+  },
+  "backtracking/n_queens": {
+    "name": "N-Queens Problem",
+    "subtopic": "Constraint satisfaction",
+    "focus_areas": ["backtracking", "state validation", "Vec<Vec<T>>"]
+  },
+  "greedy/interval": {
+    "name": "Interval Problems",
+    "subtopic": "Meeting rooms and merging",
+    "focus_areas": ["sorting", "custom comparators", "greedy choice"]
+  },
+  "greedy/huffman": {
+    "name": "Huffman Coding",
+    "subtopic": "Optimal prefix codes",
+    "focus_areas": ["BinaryHeap", "tree construction", "greedy algorithm"]
+  },
+  "binary_search/basic": {
+    "name": "Binary Search",
+    "subtopic": "Search in sorted arrays",
+    "focus_areas": ["binary_search", "partition_point", "bounds"]
+  },
+  "binary_search/rotated": {
+    "name": "Rotated Array Search",
+    "subtopic": "Modified binary search",
+    "focus_areas": ["pivot finding", "conditional logic", "edge cases"]
+  },
+  "bit_manipulation/basics": {
+    "name": "Bit Manipulation",
+    "subtopic": "Bitwise operations",
+    "focus_areas": ["&, |, ^, <<, >>", "bit tricks", "XOR properties"]
+  },
+  "bit_manipulation/advanced": {
+    "name": "Advanced Bit Tricks",
+    "subtopic": "Subsets and counting bits",
+    "focus_areas": ["bit masking", "subset generation", "count_ones()"]
+  },
+  "segment_tree/basic": {
+    "name": "Segment Tree",
+    "subtopic": "Range queries",
+    "focus_areas": ["tree representation", "lazy propagation", "Vec indexing"]
+  },
+  "fenwick_tree/basic": {
+    "name": "Fenwick Tree (BIT)",
+    "subtopic": "Prefix sum queries",
+    "focus_areas": ["binary indexing", "update operations", "bit manipulation"]
+  }
+}
