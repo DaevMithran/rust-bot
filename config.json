@@ -3,7 +3,7 @@
   "difficulty": "advanced",
   
   "active_topic_file": "topics/revision.json",
-  "active_topic": "traits/basics",
+  "active_topic": "traits_basics",
   
   "settings": {
     "mcq_count": 3,
