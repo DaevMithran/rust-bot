@@ -134,8 +134,8 @@ def main():
     # Setup
     client = anthropic.Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
     today = datetime.now().strftime('%Y-%m-%d')
-    daily_dir = Path(f'daily/{today}')
-    daily_dir.mkdir(parents=True, exist_ok=True)
+    topic_dir = Path(config['active_topic']) / today
+    topic_dir.mkdir(parents=True, exist_ok=True)
     
     print(f"Generating content for: {topic['name']}")
     print(f"Difficulty: {config['difficulty']}")
@@ -147,7 +147,7 @@ def main():
     problem = parse_problem(problem_raw)
     
     # Save MCQ
-    with open(daily_dir / '01-mcq.md', 'w') as f:
+    with open(topic_dir / '01-mcq.md', 'w') as f:
         f.write(f"# MCQs: {topic['name']}\n")
         f.write(f"**Topic:** {config['active_topic']}\n")
         f.write(f"**Difficulty:** {config['difficulty']}\n")
@@ -156,7 +156,7 @@ def main():
         f.write(mcq)
     
     # Save learning
-    with open(daily_dir / '02-learn.md', 'w') as f:
+    with open(topic_dir / '02-learn.md', 'w') as f:
         f.write(f"# Learning: {topic['name']}\n\n")
         f.write(f"**Topic:** {config['active_topic']}\n")
         f.write(f"**Subtopic:** {topic['subtopic']}\n")
@@ -165,18 +165,39 @@ def main():
         f.write(learning)
     
     # Save problem
-    problem_dir = daily_dir / '03-problem'
+    problem_dir = topic_dir / '03-problem'
     problem_dir.mkdir(exist_ok=True)
+    
+    # Create src directory
+    src_dir = problem_dir / 'src'
+    src_dir.mkdir(exist_ok=True)
     
     with open(problem_dir / 'README.md', 'w') as f:
         f.write(f"# Problem: {topic['name']}\n\n")
         f.write(f"**Difficulty:** {config['difficulty']}\n")
-        f.write(f"**Time:** 30-45 minutes\n\n")
+        f.write(f"**Time:** 15-30 minutes\n\n")
         f.write("---\n\n")
         f.write(problem.get('description', ''))
         f.write("\n\n## Files\n")
-        f.write("- `main.rs` - Implement your solution here\n")
-        f.write("- `tests.rs` - Run with `cargo test`\n")
+        f.write("- `src/lib.rs` - Implement your solution here\n")
+        f.write("- `src/tests.rs` - Run with `cargo test`\n\n")
+        f.write("## Running Tests\n")
+        f.write("```bash\n")
+        f.write("cd " + str(problem_dir.relative_to(Path.cwd())) + "\n")
+        f.write("cargo test\n")
+        f.write("```\n")
+    
+    # Create Cargo.toml
+    cargo_toml = f"""[package]
+        name = "problem"
+        version = "0.1.0"
+        edition = "2021"
+
+        [dependencies]
+    """
+    
+    with open(problem_dir / 'Cargo.toml', 'w') as f:
+        f.write(cargo_toml)
     
     # Extract code blocks from starter and tests
     starter_code = problem.get('starter', '')
@@ -188,13 +209,15 @@ def main():
     if '```rust' in test_code:
         test_code = test_code.split('```rust')[1].split('```')[0].strip()
     
-    with open(problem_dir / 'main.rs', 'w') as f:
+    # Save lib.rs
+    with open(src_dir / 'lib.rs', 'w') as f:
         f.write(starter_code)
     
-    with open(problem_dir / 'tests.rs', 'w') as f:
+    # Save tests.rs with proper module structure
+    with open(src_dir / 'tests.rs', 'w') as f:
         f.write(test_code)
     
-    print(f"✓ Content generated in {daily_dir}")
+    print(f"✓ Content generated in {topic_dir}")
 
 if __name__ == '__main__':
     main()
