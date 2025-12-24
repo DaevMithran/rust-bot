@@ -1,9 +1,9 @@
 {
   "language": "rust",
-  "difficulty": "intermediate",
+  "difficulty": "advanced",
   
   "active_topic_file": "topics/revision.json",
-  "active_topic": "ownership_and_borrowing",
+  "active_topic": "traits/basics",
   
   "settings": {
     "mcq_count": 3,
